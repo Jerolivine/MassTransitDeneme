@@ -18,7 +18,11 @@ namespace MassTransitDeneme.Consumers
 
         public Task Consume(ConsumeContext<MessageConsumerRequest> context)
         {
-            if(string.IsNullOrEmpty(conte))
+            if (string.IsNullOrEmpty(context.Message.Message))
+            {
+                throw new ArgumentException("Message cannot be empty");
+            }
+
             _logger.LogInformation("Received Message: {Message}", context.Message.Message);
 
             return Task.CompletedTask;
