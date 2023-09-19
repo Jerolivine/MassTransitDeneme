@@ -18,7 +18,7 @@ namespace MassTransitDeneme.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> PostMessage([FromBody] string message)
+        public async Task<ActionResult> PostMessage([FromBody] string? message)
         {
 
             //_messageConsumerClient.Create(new MessageConsumerRequest() { Message = message });
